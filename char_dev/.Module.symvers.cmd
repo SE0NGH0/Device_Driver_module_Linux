@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/char_dev/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/hotari/project/linux/mymodule/char_dev/Module.symvers -T /home/hotari/project/linux/mymodule/char_dev/modules.order -i Module.symvers -e 

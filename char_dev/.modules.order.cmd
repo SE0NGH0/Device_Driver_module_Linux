@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/char_dev/modules.order := {   echo /home/hotari/project/linux/mymodule/char_dev/char_dev.o; :; } > /home/hotari/project/linux/mymodule/char_dev/modules.order

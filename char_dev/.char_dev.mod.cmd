@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/char_dev/char_dev.mod := printf '%s\n'   char_dev.o | awk '!x[$$0]++ { print("/home/hotari/project/linux/mymodule/char_dev/"$$0) }' > /home/hotari/project/linux/mymodule/char_dev/char_dev.mod
