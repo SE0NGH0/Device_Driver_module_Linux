@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/led/leddrv.mod := printf '%s\n'   leddrv.o | awk '!x[$$0]++ { print("/home/hotari/project/linux/mymodule/led/"$$0) }' > /home/hotari/project/linux/mymodule/led/leddrv.mod
