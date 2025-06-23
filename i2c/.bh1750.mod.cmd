@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/i2c/bh1750.mod := printf '%s\n'   bh1750.o | awk '!x[$$0]++ { print("/home/hotari/project/linux/mymodule/i2c/"$$0) }' > /home/hotari/project/linux/mymodule/i2c/bh1750.mod

@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/i2c/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/hotari/project/linux/mymodule/i2c/Module.symvers -T /home/hotari/project/linux/mymodule/i2c/modules.order -i Module.symvers -e 
