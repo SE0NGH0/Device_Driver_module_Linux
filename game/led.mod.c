@@ -18,15 +18,15 @@ __section(".gnu.linkonce.this_module") = {
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0x47229b5c, "gpio_request" },
-	{ 0xd9ec4b80, "gpio_to_desc" },
-	{ 0xf0024008, "gpiod_direction_output_raw" },
 	{ 0x3f4c09e, "misc_register" },
 	{ 0x122c3a7e, "_printk" },
 	{ 0x9f9a8a99, "misc_deregister" },
-	{ 0x178f2652, "gpiod_set_raw_value" },
 	{ 0xfe990052, "gpio_free" },
 	{ 0x12a4e128, "__arch_copy_from_user" },
+	{ 0xd9ec4b80, "gpio_to_desc" },
+	{ 0x178f2652, "gpiod_set_raw_value" },
+	{ 0x47229b5c, "gpio_request" },
+	{ 0xf0024008, "gpiod_direction_output_raw" },
 	{ 0xf0fdf6cb, "__stack_chk_fail" },
 	{ 0x39ff040a, "module_layout" },
 };
@@ -34,4 +34,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "271C771791DA160AB767F6D");
+MODULE_INFO(srcversion, "503ACC07A545B0B752C4B34");

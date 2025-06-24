@@ -10,67 +10,69 @@
 #define BUF_SIZE 256
 
 int main(int argc, char *argv[]) {
-    if(argc!=2){
-        fprintf(stderr,"Usage: %s <server_ip>\n",argv[0]);
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <server_ip>\n", argv[0]);
         return 1;
     }
-    int sockfd=socket(AF_INET,SOCK_STREAM,0);
-    struct sockaddr_in serv={.sin_family=AF_INET,.sin_port=htons(PORT)};
-    inet_pton(AF_INET,argv[1],&serv.sin_addr);
-    if(connect(sockfd,(struct sockaddr*)&serv,sizeof(serv))<0){
-        perror("connect");exit(1);
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    struct sockaddr_in serv = {
+        .sin_family = AF_INET,
+        .sin_port = htons(PORT)
+    };
+    inet_pton(AF_INET, argv[1], &serv.sin_addr);
+    if (connect(sockfd, (struct sockaddr*)&serv, sizeof(serv)) < 0) {
+        perror("connect");
+        exit(1);
     }
-    printf("[클라이언트] 서버(%s:%d) 연결 성공\n",argv[1],PORT);
+    printf("[클라이언트] 서버(%s:%d) 연결 성공\n", argv[1], PORT);
 
-    FILE *fp = fdopen(sockfd,"r+");
+    FILE *fp = fdopen(sockfd, "r+");
     char buf[BUF_SIZE];
-    int win=0,lose=0;
 
-    while(fgets(buf,BUF_SIZE,fp)){
-        if(strncmp(buf,"WIN\n",4)==0){ printf("[결과] 승리!\n"); win++; continue; }
-        if(strncmp(buf,"LOSE\n",5)==0){ printf("[결과] 패배.\n"); lose++; continue; }
-        if(strncmp(buf,"TIE\n",4)==0){ printf("[결과] 무승부! 다시 합니다...\n"); continue; }
-
-        if(strncmp(buf,"RPS",3)==0){
-            printf("[게임: 가위바위보] 선택을 입력하세요 (rock, paper, scissors): ");
+    while (fgets(buf, BUF_SIZE, fp)) {
+        if (strncmp(buf, "WIN\n", 4) == 0) {
+            printf("[결과] 승리!\n");
+            continue;
+        }
+        if (strncmp(buf, "LOSE\n", 5) == 0) {
+            printf("[결과] 패배.\n");
+            continue;
+        }
+        if (strncmp(buf, "TIE\n", 4) == 0) {
+            printf("[결과] 무승부! 다시 합니다...\n");
+            continue;
+        }
+        if (strncmp(buf, "RPS", 3) == 0) {
+            printf("[게임: 가위바위보] 선택을 입력하세요: ");
             fflush(stdout);
             char in[BUF_SIZE];
-            if(!fgets(in,BUF_SIZE,stdin)) break;
+            if (!fgets(in, BUF_SIZE, stdin)) break;
             in[strcspn(in,"\n")] = '\0';
-            fprintf(fp,"%s\n",in);
+            fprintf(fp, "%s\n", in);
             fflush(fp);
             continue;
         }
-        if(strncmp(buf,"MEMORY",6)==0){
-            printf("[게임: 기억력] 시퀀스 : %s", buf+7);
-            printf("정답을 입력하세요 (예: A B C D E): ");
-            fflush(stdout);
-            char resp[BUF_SIZE];
-            if(!fgets(resp,BUF_SIZE,stdin)) break;
-            resp[strcspn(resp,"\n")] = '\0';
-            fprintf(fp,"%s\n",resp);
-            fflush(fp);
-            continue;
-        }
-        if(strncmp(buf,"MATH",4)==0){
-            printf("[게임: 연산] 문제 : %s", buf+5);
-            printf("정답 입력: ");
+        if (strncmp(buf, "MATH", 4) == 0) {
+            printf("[게임: 연산] 문제: %s", buf+5);
+            printf("정답: ");
             fflush(stdout);
             char in[BUF_SIZE];
-            if(!fgets(in,BUF_SIZE,stdin)) break;
+            if (!fgets(in, BUF_SIZE, stdin)) break;
             in[strcspn(in,"\n")] = '\0';
-            fprintf(fp,"%s\n",in);
+            fprintf(fp, "%s\n", in);
             fflush(fp);
             continue;
         }
-        if(strncmp(buf,"REACT\n",6)==0){
-            printf("[게임: 반응속도] NOW! 엔터를 누르세요...\n");
+        if (strncmp(buf, "REACT\n", 6) == 0) {
+            printf("[게임: 반응속도] NOW! 엔터 누르세요...\n");
             fflush(stdout);
-            char d[BUF_SIZE]; if(!fgets(d,BUF_SIZE,stdin)) break;
-            fprintf(fp,"HIT\n"); fflush(fp);
+            char d[BUF_SIZE];
+            if (!fgets(d, BUF_SIZE, stdin)) break;
+            fprintf(fp, "HIT\n");
+            fflush(fp);
             continue;
         }
-        if(strncmp(buf,"[종료]",6)==0){
+        if (strncmp(buf, "[종료]", 6) == 0) {
             printf("%s", buf);
             break;
         }
