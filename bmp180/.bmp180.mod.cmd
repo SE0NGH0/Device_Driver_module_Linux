@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/bmp180/bmp180.mod := printf '%s\n'   bmp180.o | awk '!x[$$0]++ { print("/home/hotari/project/linux/mymodule/bmp180/"$$0) }' > /home/hotari/project/linux/mymodule/bmp180/bmp180.mod
