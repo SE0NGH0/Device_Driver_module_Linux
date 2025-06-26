@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/game_lcd/lcd1602.mod := printf '%s\n'   lcd1602.o | awk '!x[$$0]++ { print("/home/hotari/project/linux/mymodule/game_lcd/"$$0) }' > /home/hotari/project/linux/mymodule/game_lcd/lcd1602.mod

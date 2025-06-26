@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/game_lcd/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/hotari/project/linux/mymodule/game_lcd/Module.symvers -T /home/hotari/project/linux/mymodule/game_lcd/modules.order -i Module.symvers -e 

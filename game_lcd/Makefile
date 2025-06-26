@@ -1,4 +1,4 @@
-obj-m := led_control.o
+obj-m := lcd1602.o
 KDIR := $(HOME)/project/linux
 PWD  := $(shell pwd)
 
@@ -7,3 +7,4 @@ all:
 
 clean:
 	make -C $(KDIR) M=$(PWD) clean
+

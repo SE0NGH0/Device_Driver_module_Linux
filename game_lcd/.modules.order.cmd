@@ -1,0 +1,1 @@
+savedcmd_/home/hotari/project/linux/mymodule/game_lcd/modules.order := {   echo /home/hotari/project/linux/mymodule/game_lcd/lcd1602.o; :; } > /home/hotari/project/linux/mymodule/game_lcd/modules.order
