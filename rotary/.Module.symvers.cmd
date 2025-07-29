@@ -1,0 +1,1 @@
+savedcmd_/home/psh/linux/mymodule/rotary/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/psh/linux/mymodule/rotary/Module.symvers -T /home/psh/linux/mymodule/rotary/modules.order -i Module.symvers -e 

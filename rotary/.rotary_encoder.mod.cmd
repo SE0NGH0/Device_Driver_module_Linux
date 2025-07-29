@@ -1,0 +1,1 @@
+savedcmd_/home/psh/linux/mymodule/rotary/rotary_encoder.mod := printf '%s\n'   rotary_encoder.o | awk '!x[$$0]++ { print("/home/psh/linux/mymodule/rotary/"$$0) }' > /home/psh/linux/mymodule/rotary/rotary_encoder.mod

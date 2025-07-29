@@ -1,0 +1,1 @@
+savedcmd_/home/psh/linux/mymodule/rotary/rotary_encoder.ko := ld -r -EL  -maarch64elf -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /home/psh/linux/mymodule/rotary/rotary_encoder.ko /home/psh/linux/mymodule/rotary/rotary_encoder.o /home/psh/linux/mymodule/rotary/rotary_encoder.mod.o /home/psh/linux/mymodule/rotary/.module-common.o
